@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ID">
+    <head>
+        <title>Burung Perkutut Jawa</title>
+        <meta name="description" content="Budidaya Perkutut Jawa">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+               1. Reset & Layout Dasar (Supaya Tampil Seperti Layar HP / Mobile Web)
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, sans-serif;
+            }
+
+            body {
+                background-color:#4b4b4b;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+            }
+/* Container Utama halaman artikel */
+            .main-content {
+                background-color: #ffffff;
+                width: 100%;
+                max-width: 600px;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            }
+            /* Pembungkus halaman utama */
+            body > div, 
+            #header, 
+            #profil, 
+            #beternak, 
+            .isi, 
+            .gambar, 
+            .koleksi, 
+            .promo {
+                background-color: #ffffff;
+                width: 100%;
+                max-width: 600px;
+                padding: 0 15px; 
+            }
+
+            /* Tambahan padding atas untuk konten pertama setelah header */
+            body > div:nth-of-type(2) {
+                padding-top: 15px;
+            }
+
+               2. Header & Kutipan/Quote Berwarna Kuning
+
+            #header {
+                padding-top: 15px;
+                padding-bottom: 5px;
+            }
+
+            /* Judul Utama Artikel */
+            #header h1 {
+                color: #2b3bb5;
+                font-size: 18px;
+                font-weight: bold;
+                text-align: center;
+                border-bottom: 2px solid #2b3bb5;
+                padding-bottom: 6px;
+                margin-bottom: 12px;
+            }
+
+            /* Box Kutipan Kuning */
+            #header blockquote {
+                background-color:#fffee0;
+                border: 1px solid #f6f0aa;
+                padding: 10px;
+                border-radius: 4px;
+                font-size: 11px;
+                color: #ee9209;
+                line-height: 1.4;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+
+            #soekarno {
+                display: block;
+                margin-top: 4px;
+                font-weight: bold;
+            }
+
+               3. Menu Navigasi Link Internal
+
+            body > div:nth-of-type(2) ul {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                list-style: none;
+                margin-bottom: 15px;
+            }
+
+            body > div:nth-of-type(2) a {
+                font-size: 12px;
+                color: #0026ca;
+                text-decoration: underline;
+            }
+
+
+               4. Pengaturan Gambar Utama (Top Grid)
+
+            .gambar {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                margin-bottom: 15px;
+            }
+
+            .gambar img {
+                width: 48.5%;
+                height: auto;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                object-fit: cover;
+            }
+
+               5. Isi Artikel (Paragraf & Dropcap Huruf Pertama)
+               ========================================================================== */
+            .isi p {
+                font-size: 13px;
+                line-height: 1.6;
+                text-align: justify;
+                margin-bottom: 12px;
+                color: #333333;
+            }
+
+            /* Membuat efek Dropcap (Huruf B besar di awal paragraf) */
+            .isi p:first-of-type::first-letter {
+                font-size: 34px;
+                float: left;
+                line-height: 0.8;
+                margin-right: 5px;
+                margin-top: 4px;
+                color: #1c33e7;
+                font-weight: bold;
+            }
+
+            /* Menjaga teks beraliran normal kembali setelah inisial kapital */
+            .jawa {
+                font-weight: normal;
+            }
+
+
+               6. Bagian Profil Burung (List Bullets)
+
+            #profil {
+                margin-top: 15px;
+            }
+
+            #profil h3 {
+                font-size: 14px;
+                color: #000;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 3px;
+                margin-bottom: 10px;
+            }
+
+            #profil ul {
+                list-style: none;
+            }
+
+            #profil ul li {
+                font-size: 12px;
+                line-height: 1.6;
+                margin-bottom: 8px;
+                position: relative;
+                padding-left: 15px;
+                text-align: justify;
+                color: #333;
+            }
+
+            /* Kustomisasi Bullet agar rapi */
+            #profil ul li::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-weight: bold;
+            }
+
+               7. Bagian Cara Beternak (List Penomoran Kustom)
+
+            #beternak {
+                margin-top: 15px;
+            }
+
+            #beternak h3 {
+                font-size: 14px;
+                color: #000000;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 3px;
+                margin-bottom: 12px;
+            }
+
+            #beternak ol {
+                list-style: none; /* Menghilangkan angka bawaan agar layout menyatu */
+            }
+
+            #beternak ol li {
+                margin-bottom: 15px;
+            }
+
+            #beternak h4 {
+                font-size: 13px;
+                color: #000;
+                margin-bottom: 4px;
+                font-weight: bold;
+            }
+
+            #beternak p {
+                font-size: 12px;
+                line-height: 1.5;
+                text-align: justify;
+                color: #333333;
+            }
+
+
+               8. Galeri Koleksi Gambar Bawah
+
+            .koleksi {
+                display: flex;
+                justify-content: space-between;
+                gap: 6px;
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+
+            .koleksi img {
+                width: 23.5%;
+                height: auto;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                object-fit: cover;
+            }
+
+               9. Kotak Promo Penawaran Khusus (CTA Box)
+
+            .promo {
+                border: 2px dashed #d32f2f;
+                background-color: #fff8f8;
+                padding: 15px !important;
+                text-align: center;
+                border-radius: 6px;
+                margin-top: 10px;
+                margin-bottom: 30px; /* Jarak akhir halaman */
+            }
+
+            /* Judul Promo */
+            .promo h2 {
+                font-size: 14px;
+                color: #000;
+                font-weight: bold;
+                margin-bottom: 10px;
+                line-height: 1.4;
+            }
+
+            /* Informasi Harga & Kontak */
+            .promo h3 {
+                font-size: 12px;
+                font-weight: normal;
+                color: #444;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .promo h3 del {
+                color: #d32;
+            }
+
+            .promo h3 strong {
+                color: #d32f2f;
+                font-size: 14px;
+            }
+
+            #Wa {
+                color: #d32f2f;
+                font-weight: bold;
+            }
+
+            /* Bagian eCommerce */
+            .promo h4 {
+                font-size: 11px;
+                color: #666;
+                margin-bottom: 8px;
+                font-weight: normal;
+            }
+
+            /* Mengubah daftar angka eCommerce menjadi susunan tombol/badge horizontal */
+            .promo ol {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                list-style: none;
+            }
+
+            .promo ol li a {
+                display: inline-block;
+                background-color: #424242;
+                color: #ffffff;
+                font-size: 11px;
+                padding: 4px 10px;
+    </style>
+ 
+        </head>
+    <body>
+        <div id="header">
+            <h1>Perkutut Jawa Suara Emas Penghibur Hati</h1>
+            <blockquote>
+                Jikalau aku mendengarkan burung Perkutut
+menyanyi di pohon ditiup angin yang sepoi-sepoi
+bukan lagi aku mendengarkan burung Perkutut
+Aku mendengarkan Indonesia <br/>
+                <span id="soekarno">Soekarno - President RI I</span>
+            </blockquote>
+        </div>
+        <div>
+            <ul>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#berternak">Budidaya</a></li>
+            <li><a href="#harga">Harga</a></li>
+            </ul>
+
+        </div>
+        <div class="gambar">
+            <img src="/img/burung2.png" alt="Burung Perkutut Jawa"/>
+            <img src="/img/burung1.png" alt="Burung Suara Emas"/>       
+        </div>
+        <div class="isi">
+            <p>
+                Burung <span class="jawa">Perkutut Jawa</span> dengan nama latin <i>Geopelia striata</i> bukan hanya burung yang mampu bersuara, 
+                akan tetapi burung ini mempunyai beragam keunikan yang tidak dimiliki oleh burung lainnya. Bagi sebagian pemelihara burung, dengan hanya melihat perkutut, 
+                sudah bisa memastikan bagaimana suara yang akan dihasilkan.
+                Salah satu kebiasaan dari burung ini adalah terbang dan bertengger di kebun atau ladang. Selain itu, mereka juga sering mencari makan di jalan yang jarang dilintasi oleh manusia </p>
+            <p>
+                Perkutut Jawa  hidup berpasangan atau kelompok kecil. Perkutut jawa makan di permukaan tanah. Kadang mereka berkumpul untuk minum di sumber air.
+                 Sarangnya berbentuk datar tipis dan terbuat dari ranting-ranting. 
+                 Telur berwarna putih, jumlah 2 butir. Perkutut jawa berbiak pada bulan Januari-September. 
+             </p>
+           
+        </div>
+        <div id="profil">
+            
+            <h3>Profil Perkutut Jawa</h3>
+            <a name="profil"/>
+            <ul>
+                <li>Burung perkutut jawa (Geopelia striata) atau dikenal juga sebagai perkutut lokal mempunyai tubuh ramping panjang berukuran sedang, sekitar 20-25 cm, ukuran ekor pendek dengan kepala membulat</li>
+                <li>Burung pemakan biji-bijian ini biasanya dipelihara oleh orang Jawa yang mempunyai sebagai burung kicauan karena suaranya yang khas dan dianggap membawa keberuntungan</li>
+                <li>Burung dengan nama latin Geopelia striata bukan hanya burung yang mampu bersuara, akan tetapi burung ini mempunyai beragam keunikan yang tidak dimiliki oleh burung lainnya.</li>
+                <li>Burung perkutut di alam memakan rerumputan, benih gulma dan serangga. Sehingga, dimungkinkan di alam mempunyai manfaat sebagai pengontrol alami gulma dan serangga.</li>
+            </ul>
+        </div>
+        <div id="beternak">
+            <h3>Cara Berternak Perkutut Jawa</h3>
+            <a name="berternak"/>
+            <ol>
+                <li><h4>Pemilihan Bibit</h4>
+                    <p>
+                        Bibit atau indukan burung perkutut yang akan dibudidayakan haruslah telah berumur ideal yaitu minimal berumur 4 bulan dan sebaiknya betina lebih tua dari jantan. Selain itu pilihlah bibit yang baik agar hasilnya juga baik, berikut ciri-ciri indukan perkutut yang baik
+                    </p>
+                </li>
+                <li><h4>Persiapan Kandang Budidaya</h4>
+                <p>
+                    Kandang yang digunakan untuk budidaya biasanya adalah kandang dengan ukuran tinggi bervariasi antara 45-180 cm, lebar 60 cm, panjang antara 100-180 cm, lantainya terbuat dari pasir atau tanah dan ataonya berupa asbes atau genting.
+                </p></li>
+                <li><h4>Proses Perjodohan</h4>
+                <p> 
+                Untuk menjodohkan burung perkutut ini, pertama masukkan perkutut yang akan dijodohkan ke dalam kandang ternak pada saat sore hari. Nemun perlu diperhatikan sebelum dimasukkan ke dalam kandang ternak kedua perkutut yang akan dijodohkan terlebih dahulu diberikan kacang hijau lunak, minyak ikan, vitamin E dan badannya dibasahi sedikit
+                </p></li>
+                <li><h4>Tahap Pemeliharaan Anakan</h4>
+                <p>
+                    Piyik atau anakan burung yang baru menetas, sebaiknya dipisahkan terlebih dahulu dari induknya jika sudah berumur 1-1,5 bulan. Pada usia tersebut, piyik biasanya sudah bisa makan sendiri. Tempatkan piyik dalam sangkar yang memiliki ukuran sekitar 50 cm x 70 cm x 50 cm dengan dalam satu sangkar diletakkan 8 sampai 10 ekor piyik burung perkutut
+                </p>
+                </li>
+            </ol>
+        </div>
+        <div class="koleksi">
+            <img src="/img/burung4.png/">
+            <img src="/img/burung3.png/">
+            <img src="/img/burung5.jpg/">
+            <img src="/img/burung6.png/">          
+        </div>
+        <div class="promo">
+            <h2>Tertarik untuk budidaya / memelihara Perkutut Jawa?, 
+                <br/>Penawaran Khusus Bagi Anda </h2>
+            <h3>
+                Harga 1 Ekor Perkutut Remaja <del>Rp. 75.000</del> <br/>
+                Sekarang cukup <strong>Rp. 50.000</strong> saja!
+                <br/>
+                <a name="harga"/>
+                Berminat hubung kami di <span id="Wa">WA - 012455588222</span>
+            </h3>
+            <h4>Kami Hadir juga di aplikasi eCommerce:</h4>
+            <ol>
+                <li><a href="tokopedia.com">tokopedia</a></li>
+                <li><a href="bukakapak.com">Bukalapak</a></li>
+                <li><a href="shopee.com">shopee</a></li>
+            </ol>
+        </div>
+
+    </body>
+</html>
